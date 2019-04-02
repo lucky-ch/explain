@@ -1,0 +1,11 @@
+jenkins相关：
+windows环境下jenkins：
+Jenkins的Windows Slave分布式构建和部署：https://www.cnblogs.com/linJie1930906722/p/5998378.html
+
+JDK安装与环境变量配置：  https://jingyan.baidu.com/article/6dad5075d1dc40a123e36ea3.html
+
+window 命令行常用命令：   https://blog.csdn.net/qq_32451373/article/details/77743869
+
+haoying@topwise-s20:/work1$ mkdir jenkins
+haoying@topwise-s20:/work1/jenkins$ cd /
+haoying@topwise-s20:/$ sudo ln -s /work1/jenkins/local
