@@ -9,3 +9,24 @@ window 命令行常用命令：   https://blog.csdn.net/qq_32451373/article/details/7774
 haoying@topwise-s20:/work1$ mkdir jenkins
 haoying@topwise-s20:/work1/jenkins$ cd /
 haoying@topwise-s20:/$ sudo ln -s /work1/jenkins/local
+
+批处理基本命令：
+http://www.cnblogs.com/SunShineYPH/archive/2011/12/13/2285570.html
+
+文件的各种if操作意思：    https://www.cnblogs.com/dylancao/p/9178659.html
+
+未细看：
+https://www.cnblogs.com/yangxia-test/p/4354328.html
+https://www.jb51.net/list/list_235_1.htm
+
+
+
+
+
+
+
+
+
+
+
+
