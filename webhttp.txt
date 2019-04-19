@@ -5,10 +5,26 @@ Jenkins的Windows Slave分布式构建和部署：https://www.cnblogs.com/linJie1930906722
 JDK安装与环境变量配置：  https://jingyan.baidu.com/article/6dad5075d1dc40a123e36ea3.html
 
 window 命令行常用命令：   https://blog.csdn.net/qq_32451373/article/details/77743869
+windows batch 常用命令:
+https://blog.csdn.net/u013677776/article/details/19929711
 
+HTML 5 教程:  http://www.w3school.com.cn/html5/index.asp
+HTML 5 视频： http://www.w3school.com.cn/html5/html_5_video.asp
+
+创建local链接：
 haoying@topwise-s20:/work1$ mkdir jenkins
 haoying@topwise-s20:/work1/jenkins$ cd /
 haoying@topwise-s20:/$ sudo ln -s /work1/jenkins/local
+
+linux系统下挂载及开机挂载：
+
+sudo mount -t cifs //10.20.30.5/MTK_SP/rel/内部版本 -o username=xiaoxiahui,password=1234567,dom=topwisesz,gid=root,uid=chenli,rw,nounix,iocharset=utf8,file_mode=0644,dir_mode=0755 /FTP
+
+开机挂载：
+sudo vi /etc/fstab 
+
+//10.20.30.5/MTK_SP/rel/内部版本 /FTP cifs username=xiaoxiahui,password=1234567,dom=topwisesz,gid=root,uid=jenkins,rw,nounix,iocharset=utf8,file_mode=0644,dir_mode=0755 0 2
+
 
 批处理基本命令：
 http://www.cnblogs.com/SunShineYPH/archive/2011/12/13/2285570.html
@@ -21,6 +37,40 @@ https://www.jb51.net/list/list_235_1.htm
 
 
 https://www.cnblogs.com/imyalost/p/8677345.html
+WINDOWS批量替换不同文件夹下的相同文件:
+https://www.cnblogs.com/songzhenhua/p/9312771.html
+有用的2个 Windows 下批处理文件（bat文件）:
+https://www.cnblogs.com/chanchifeng/p/6353875.html
+Windows批处理(cmd/bat)常用命令小结:
+https://www.cnblogs.com/dongzhuangdian/p/5510941.html
+
+
+环境部署（二）：Linux下安装jenkins:
+http://www.cnblogs.com/imyalost/p/8710933.html
+jenkins简单安装及配置（Windows环境）
+https://www.cnblogs.com/imyalost/p/8677345.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
