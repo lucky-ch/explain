@@ -67,6 +67,26 @@ exit 0
 type nul>文件名
 
 
+::导记录
+
+cd %project%\%Customer%\11CW1352MP_TOP61A_11C_V33_GPRS_MMI
+git show-ref -s refs/remotes/origin/master > gitlog_id.txt
+set /P HEAD=<gitlog_id.txt
+z:
+cd MT6261\%project%\temp
+copy %Customer%_id.txt d:\workspace\P0001\%project%\%Customer%\11CW1352MP_TOP61A_11C_V33_GPRS_MMI
+set /P OLDH=<%Customer%_id.txt
+echo %OLDH%
+d:
+git log %OLDH%..%HEAD% > ReleaseNote.txt
+del %Customer%_id.txt
+rename gitlog_id.txt  %Customer%_id.txt
+copy  Releasenote.txt z:\MT6261\%project%\%Customer%\%Customer%_%version%
+copy  %Customer%_id.txt z:\MT6261\%project%\temp
+
+exit 0
+
+
 不采用取代码方式，采用复制形式，替换第二步：
 dir
 ::判断目录是否存在
@@ -82,6 +102,9 @@ xcopy 11CW1352MP_TOP61A_11C_V33_GPRS_MMI d:\workspace\P0001\P0001\%Customer%\11C
 dir
  exit 0
 默认在  D:\workspace\P0001
+
+
+
 
 
 
