@@ -4,7 +4,6 @@
 
 
 python语言linux的磁盘空间判断和赋值。
-
 # no need to change, check disk room
 #Execute Python script
 import os
