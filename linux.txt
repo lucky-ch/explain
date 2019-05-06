@@ -1,0 +1,84 @@
+
+判断磁盘空间---延时操作---确认版本未发过----确认并更新必要工具---拷贝/下载必备版本--rebuild----版本编译---版本导出---记录导出---
+
+
+
+python语言linux的磁盘空间判断和赋值。
+
+# no need to change, check disk room
+#Execute Python script
+import os
+import sys
+from commands import *
+space = getoutput('df -h /local/ | awk \'{print $4}\'')
+space = space.split('\n')[1]
+
+fSpace = float(space[:-1])
+if (fSpace < 125 and space[-1] == 'G') or ((space[-1] != 'G') and (space[-1] != 'T')):
+    print '**Error: there is no enough space left on device!'
+    print '**       there is only %s left.' %space
+    sys.exit(1)
+    print '======================test'
+
+
+shell赋值、变量调用及if语句使用：
+fullversion=${Customer}_${version}_${build_variant}
+if ($Sign);then
+fullversion=${Customer}_SEC_${version}_${build_variant}
+elif ($SEC);then
+fullversion=${Customer}_TSEC_${version}_${build_variant}
+else
+fullversion=${Customer}_${version}_${build_variant}
+fi
+
+###确认某文件夹是否存在，-e
+if [ -e /FTP/MT8735_POS/${project}/${Customer}/${fullversion} ];then 
+	echo "${fullversion} already exists!"
+    exit 1
+fi
+
+##参数：-p 确保目录名称存在，如果目录不存在的就新创建一个。
+mkdir -p /data/code/
+## echo用法+判断条件：不是一个目录 [-d判断目录]
+if [ ! -d /local/tools_int ]:then 
+echo "${finaldir} already exists!"
+fi
+### [-a]保留文件属性前提下复制文件
+cp -a /local/tools_int/java-se-7u75-ri ~/tools
+####flock文件锁
+cd /data/code/ALPS-MP-N0.MP1-V1.35.4_TPW8735A_TTB_N
+flock /data/code/ALPS-MP-N0.MP1-V1.35.4_TPW8735A_TTB_N -c "git reset --hard HEAD && git pull"
+
+
+# 延时操作String Parameter
+if [ "${SLEEP_TIME}" = "now" ]; then
+	sleep 1s
+else
+	sleep ${SLEEP_TIME}
+fi
+####判断某文件是否存在
+ls ./customize/out/release/${Customer}_*${version}*/${Customer}_*${version}*
+exit $?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

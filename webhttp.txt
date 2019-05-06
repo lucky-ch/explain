@@ -8,9 +8,11 @@ window 命令行常用命令：   https://blog.csdn.net/qq_32451373/article/details/7774
 windows batch 常用命令:
 https://blog.csdn.net/u013677776/article/details/19929711
 
+节点管理：https://blog.csdn.net/jiang1986829/article/details/51141731
+
 HTML 5 教程:  http://www.w3school.com.cn/html5/index.asp
 HTML 5 视频： http://www.w3school.com.cn/html5/html_5_video.asp
-
+shell教程： http://c.biancheng.net/view/1262.html
 创建local链接：
 haoying@topwise-s20:/work1$ mkdir jenkins
 haoying@topwise-s20:/work1/jenkins$ cd /
@@ -50,11 +52,13 @@ http://www.cnblogs.com/imyalost/p/8710933.html
 jenkins简单安装及配置（Windows环境）
 https://www.cnblogs.com/imyalost/p/8677345.html
 
+gitlab
+https://www.cnblogs.com/wintersun/p/3930900.html
 
 
-
-
-
+菜鸟教程shell,python
+https://www.runoob.com/linux/linux-install.html
+https://www.runoob.com/python/python-basic-syntax.html
 
 
 
