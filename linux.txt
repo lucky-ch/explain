@@ -1,6 +1,17 @@
 
 判断磁盘空间---延时操作---确认版本未发过----确认并更新必要工具---拷贝/下载必备版本--rebuild----版本编译---版本导出---记录导出---
 
+####从某文件夹里面去除某个文件
+cd work1/.../某文件夹
+for filename in $(ls)    ####遍历文件夹里文件
+do
+	echo ${filename} >>filename.txt
+done
+filename01=`cat filename.txt | grep "target_files"`      ###获取带有关键字文件放入01 
+rm -rf filename.txt
+cp -av /FTP/..../${basefullversion}/${filename01} /local/..../idh.code/${basefullversion}
+
+
 
 
 python语言linux的磁盘空间判断和赋值。
