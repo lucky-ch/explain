@@ -1,6 +1,38 @@
-第一步：::判断目录是否存在
 
-dir
+创建文件夹
+mkdir "%Customer%"_"%version%"
+
+进入根目录
+cd \
+
+进入d盘某目录
+cd d:\workspace\P2408\
+
+在某文件夹下复制某文件到某目录
+copy test.zip d:\%project%\
+
+链接使用两个命令
+cd \ && cd workspace\P2408\%project%\
+
+复制文件夹到另一个目录
+xcopy %Customer%_%version% z:\%Customer%_%version%  /Y/E/I
+
+批处理删除文件命令
+rd /s/q %Customer%_%version%
+
+创建文件
+type nul>文件名
+
+获取当前代码最新commit id
+git show-ref -s refs/remotes/origin/master > gitlog_id.txt
+
+将文件内容赋值到参数
+set /P HEAD=<gitlog_id.txt
+
+输出内容
+echo %OLDH%
+
+if语句用法
 if not exist %project% (
    mkdir %project%
 )
@@ -12,96 +44,18 @@ if not exist  %Customer% (
    mkdir "%Customer%"
 )
 cd %Customer%
-dir
- exit 0
+exit 0
 
-第二步：::从服务器取代码
-:: exit 0
+windows下if else if用法
 cd "%project%"
 cd "%Customer%"
 
 if "P2408" == "%project%" (
-    git  clone http://10.20.30.20:8080/11BW1308MP_TOP60A_11B_V40_GPRS_MMI.git -b "%branch%"
+    git  clone http://.....I.git -b "%branch%"
 ) else if  "P2401" == "%project%" (
-    git  clone http://10.20.30.20:8080/11BW1308MP_TOP60A_11B_V40_GPRS_MMI.git -b "%branch%"
-) else if  "P0001" == "%project%" (
-    git  clone http://10.20.30.20:8080/11CW1352MP_TOP61A_11C_V33_GPRS_MMI.git -b "%branch%"
-)
+    git  clone http://.....I.git -b "%branch%"
+) 
 exit 0
-
-第三步：进入编译目录编译
-::exit 0
-if "P2408" == "%project%" (
-       cd "%project%"
-       cd "%Customer%"
-       cd 11BW1308MP_TOP60A_11B_V40_GPRS_MMI
-       make.bat %Customer% gprs %version% new
-) else if  "P2401" == "%project%" (
-       cd "%project%"
-       cd "%Customer%"
-       cd 11BW1308MP_TOP60A_11B_V40_GPRS_MMI
-       make.bat %Customer% gprs %version% new
-) else if  "P0001" == "%project%" (
-       cd "%project%"
-       cd "%Customer%"
-       cd 11CW1352MP_TOP61A_11C_V33_GPRS_MMI
-       make.bat %Customer% gprs %version% new
-)
-exit 0
-
-第四步：把文件复制到版本服务器
- ::exit 0
-::导出
-     cd %project%
-     mkdir "%Customer%"_"%version%"
-     cd "%Customer%"_"%version%"
-     dir
-     cd \
-     cd d:\workspace\P2408\%project%\%Customer%\11BW1308MP_TOP60A_11B_V40_GPRS_MMI\build\%Customer%\
-     copy %Customer%_%version%.zip d:\workspace\P2408\%project%\%Customer%_%version%
-     dir
-     cd \ && cd workspace\P2408\%project%\
-     xcopy %Customer%_%version% z:\MT6260\EC620\%Customer%\%Customer%_%version%  /Y/E/I
-      rd /s/q %Customer%_%version%
-exit 0
-type nul>文件名
-
-
-::导记录
-
-cd %project%\%Customer%\11CW1352MP_TOP61A_11C_V33_GPRS_MMI
-git show-ref -s refs/remotes/origin/master > gitlog_id.txt
-set /P HEAD=<gitlog_id.txt
-z:
-cd MT6261\%project%\temp
-copy %Customer%_id.txt d:\workspace\P0001\%project%\%Customer%\11CW1352MP_TOP61A_11C_V33_GPRS_MMI
-set /P OLDH=<%Customer%_id.txt
-echo %OLDH%
-d:
-git log %OLDH%..%HEAD% > ReleaseNote.txt
-del %Customer%_id.txt
-rename gitlog_id.txt  %Customer%_id.txt
-copy  Releasenote.txt z:\MT6261\%project%\%Customer%\%Customer%_%version%
-copy  %Customer%_id.txt z:\MT6261\%project%\temp
-
-exit 0
-
-
-不采用取代码方式，采用复制形式，替换第二步：
-dir
-::判断目录是否存在
-cd P0001
-if not exist 11CW1352MP_TOP61A_11C_V33_GPRS_MMI (
-    git  clone http://10.20.30.20:8080/11CW1352MP_TOP61A_11C_V33_GPRS_MMI.git -b "%branch%"   
-) else (
-    cd 11CW1352MP_TOP61A_11C_V33_GPRS_MMI
-    git reset --hard origin/%branch% && git pull
-)
-cd ../
-xcopy 11CW1352MP_TOP61A_11C_V33_GPRS_MMI d:\workspace\P0001\P0001\%Customer%\11CW1352MP_TOP61A_11C_V33_GPRS_MMI  /Y/E/I
-dir
- exit 0
-默认在  D:\workspace\P0001
 
 
 

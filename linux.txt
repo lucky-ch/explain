@@ -71,13 +71,14 @@ ls ./customize/out/release/${Customer}_*${version}*/${Customer}_*${version}*
 exit $?
 
 
+#获取当前代码的commit id
+git show-ref -s refs/remotes/origin/${branch} >gitlog_id.txt
 
+#获取文件内容
+HEAD=$(cat gitlog_id.txt)
 
-
-
-
-
-
+获取两个之间的记录并保存
+git log  ${OLDH}..${HEAD} >ReleaseNote.txt
 
 
 
