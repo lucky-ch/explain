@@ -32,18 +32,18 @@ if (fSpace < 125 and space[-1] == 'G') or ((space[-1] != 'G') and (space[-1] != 
 
 
 shell赋值、变量调用及if语句使用：
-fullversion=${Customer}_${version}_${build_variant}
-if ($Sign);then
-fullversion=${Customer}_SEC_${version}_${build_variant}
-elif ($SEC);then
-fullversion=${Customer}_TSEC_${version}_${build_variant}
+fullversion=${a}_${b}
+if (boll);then
+fullversion=${a}_SE
+elif (bo);then
+fullversion=${b}_
 else
-fullversion=${Customer}_${version}_${build_variant}
+fullversion=${a}_${b}_${c}
 fi
 
 ###确认某文件夹是否存在，-e
-if [ -e /FTP/MT8735_POS/${project}/${Customer}/${fullversion} ];then 
-	echo "${fullversion} already exists!"
+if [ -e /a/文件夹名 ];then 
+	echo "aaa already exists!"
     exit 1
 fi
 
@@ -56,8 +56,8 @@ fi
 ### [-a]保留文件属性前提下复制文件
 cp -a /local/tools_int/java-se-7u75-ri ~/tools
 ####flock文件锁
-cd /data/code/ALPS-MP-N0.MP1-V1.35.4_TPW8735A_TTB_N
-flock /data/code/ALPS-MP-N0.MP1-V1.35.4_TPW8735A_TTB_N -c "git reset --hard HEAD && git pull"
+cd /data/文件夹
+flock /data/文件夹 -c "git reset --hard HEAD && git pull"
 
 
 # 延时操作String Parameter
