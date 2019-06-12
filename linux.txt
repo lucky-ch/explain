@@ -11,25 +11,12 @@ filename01=`cat filename.txt | grep "target_files"`      ###获取带有关键字文件放
 rm -rf filename.txt
 cp -av /FTP/..../${basefullversion}/${filename01} /local/..../idh.code/${basefullversion}
 
+linux系统盘挂载：
+sudo mount -t cifs 挂载路径 -o username=haoying,password=1234567,dom=hampoosz,gid=root,uid=haoying,rw,nounix,iocharset=utf8,file_mode=0644,dir_mode=0755 /FTP
 
-
-
-python语言linux的磁盘空间判断和赋值。
-# no need to change, check disk room
-#Execute Python script
-import os
-import sys
-from commands import *
-space = getoutput('df -h /local/ | awk \'{print $4}\'')
-space = space.split('\n')[1]
-
-fSpace = float(space[:-1])
-if (fSpace < 125 and space[-1] == 'G') or ((space[-1] != 'G') and (space[-1] != 'T')):
-    print '**Error: there is no enough space left on device!'
-    print '**       there is only %s left.' %space
-    sys.exit(1)
-    print '======================test'
-
+实现开机自动挂载：
+sudo vi /etc/fstab 
+挂载路径 /FTP cifs username=haoying,password=1234567,dom=hampoosz,gid=root,uid=jenkins,rw,nounix,iocharset=utf8,file_mode=0644,dir_mode=0755 0 2
 
 shell赋值、变量调用及if语句使用：
 fullversion=${a}_${b}

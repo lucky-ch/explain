@@ -60,6 +60,46 @@ https://www.cnblogs.com/wintersun/p/3930900.html
 https://www.runoob.com/linux/linux-install.html
 https://www.runoob.com/python/python-basic-syntax.html
 
+设置生成log的格式
+https://www.cnblogs.com/kubimiantiao/p/4226661.html
+ege：  $git log --pretty=format:"%H %n %s"
+
+
+jenkins节点
+https://www.cnblogs.com/zz0412/p/jenkins_jj_12.html
+https://www.jianshu.com/p/2c5b19f587c2
+https://www.2cto.com/kf/201712/702373.html
+
+
+linux修改用户名密码
+https://blog.csdn.net/kzadmxz/article/details/74784337
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
