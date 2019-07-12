@@ -1,0 +1,12 @@
+一、关于jenkins的slave节点连接问题：
+
+1.首要确认好jenkins的URL链接地址和端口配置是否正确。系统设置--jenkins locare：http：//ip:8080/
+2.确保连接slave的方式两种只能选其一，否则有可能导致连接失败。
+
+二、关于svn在cmd窗口无法识别的问题
+
+1.确认环境变量（path路径下）。一般安装完SVN环境变量是没有问题的！
+2.需要在控制面板的程序和功能里面选中SVN软件点击更改（modify），对command line client tools进行安装（svn默认不安装此选项），选中第一项容许安装（will be installed on local hard drivers）,一直点下一步安装完成。后输入svn已可以识别。
+
+三、关于windows批处理命令：另写。
+pwd不是默认命令，用dir显示当前目录。
