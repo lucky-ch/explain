@@ -63,7 +63,7 @@ exit 0
 
 
 ::获取SVN revision log.
-set svnURL="https://172.168.111.240/svn/组织级配置库/组织级财富库/2018前研发历史资料/软件项目配置库"
+set svnURL="https://172.10/svn/组/级库/资料/置库"
 svn info %svnURL% | findstr "Rev:"  > Version.txt
 for /f "tokens=4 delims= " %%i in (Version.txt) do set rev=%%i
 echo %rev%
@@ -80,6 +80,7 @@ if "%log%" == "true" (
 ) else (
     svn checkout %store%
 )
+
 set svnURL= %store%
 svn info %svnURL% | findstr "Rev:"  > Version.txt
 for /f "tokens=4 delims= " %%i in (Version.txt) do set rev=%%i
