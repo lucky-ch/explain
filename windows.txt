@@ -1,4 +1,8 @@
 
+定期删除指定目录下文件
+set SrcDir=E:\workspace\BIM\Test
+set DaysAgo=2
+forfiles /p %SrcDir% /s /m *.* /d -%DaysAgo% /c "cmd /c del /f /q /a @path"
 
 将e:\work映射为z:盘，使用subst z: e:\work
 取消z盘映射，使用subst z: /d
